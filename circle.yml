@@ -7,6 +7,9 @@ script:
 branches:
   only:
     - develop
+test:
+  post:
+    - bundle exec rake custom:test:suite
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
